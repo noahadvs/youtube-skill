@@ -65,7 +65,7 @@ Rectangle {
             id: suggestListView
             clip: true
             model: videoSuggestionList
-            delegate: Delegates.ListVideoCard{}
+            delegate: Delegates.VideoCard{}
             title: "Watch Next"
             Layout.margins: Kirigami.Units.largeSpacing * 2
             cellWidth: parent.width / 4

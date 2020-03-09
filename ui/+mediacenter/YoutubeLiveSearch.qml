@@ -44,6 +44,9 @@ Mycroft.Delegate {
     fillWidth: true
     
     topPadding: 0
+    leftPadding: 0
+    rightPadding: 0
+    bottomPadding: 0
     
     skillBackgroundSource: sessionData.bgImage ? "https://source.unsplash.com/weekly?" + sessionData.bgImage : "https://source.unsplash.com/weekly?music"
         
@@ -108,6 +111,29 @@ Mycroft.Delegate {
         parent.parent.parent.currentItem.contentItem.forceActiveFocus()
     }
     
+    LinearGradient {
+        anchors {
+            top: parent.top
+            bottom: parent.bottom
+        }
+        width: parent.width/2
+        start: Qt.point(0, 0)
+        end: Qt.point(width, 0)
+        gradient: Gradient {
+            GradientStop {
+                position: 0.0
+                color: Qt.rgba(0, 0, 0, 0.75)
+            }
+            GradientStop {
+                position: 0.5
+                color: Qt.rgba(0, 0, 0, 0.5)
+            }
+            GradientStop {
+                position: 1.0
+                color:  "transparent"
+            }
+        }
+    }
     
     ColumnLayout {
         id: colLay1
@@ -263,6 +289,8 @@ Mycroft.Delegate {
             Layout.fillWidth: true
             Layout.fillHeight: true
             currentIndex: 0
+            
+            Layout.leftMargin: Kirigami.Units.largeSpacing*4
             
             onFocusChanged: {
                 if(focus){

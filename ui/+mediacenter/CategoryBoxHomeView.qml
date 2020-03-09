@@ -79,116 +79,70 @@ Item {
             }
         }
         height: parent.height
-        spacing: Kirigami.Units.largeSpacing
         
-        BigScreen.TileView {
+        anchors.leftMargin: Kirigami.Units.largeSpacing*3
+        anchors.topMargin: Kirigami.Units.largeSpacing*4
+        spacing: Kirigami.Units.largeSpacing*4
+        
+        Views.VideoTileView {
             id: recentListView
             focus: true
             title: "Recently Watched"
-            cellWidth: parent.width / 4
-            delegate: Delegates.ListVideoCard{}
-            onActiveFocusChanged: {
-                if(activeFocus){
-                    contentLayout.currentSection = recentListView
-                }
-            }
 
             navigationUp: homeCatButton
             navigationDown: trendListView
         }
 
-        BigScreen.TileView {
+        Views.VideoTileView {
             id: trendListView
             focus: false
             title: "Trending"
-            cellWidth: parent.width / 4
-            delegate: Delegates.ListVideoCard{}
-            onActiveFocusChanged: {
-                if(activeFocus){
-                    contentLayout.currentSection = trendListView
-                }
-            }
 
             navigationUp: recentListView
             navigationDown: newsListView
         }
 
-        BigScreen.TileView {
+        Views.VideoTileView {
             id: newsListView
             focus: false
             title: "News"
-            cellWidth: parent.width / 4
-            delegate: Delegates.ListVideoCard{}
-            onActiveFocusChanged: {
-                if(activeFocus){
-                    contentLayout.currentSection = newsListView
-                }
-            }
-            
+
             navigationUp: trendListView
             navigationDown: musicListView
         }
         
-        BigScreen.TileView {
+        Views.VideoTileView {
             id: musicListView
             focus: false
             title: "Music"
-            cellWidth: parent.width / 4
-            delegate: Delegates.ListVideoCard{}
-            onActiveFocusChanged: {
-                if(activeFocus){
-                    contentLayout.currentSection = musicListView
-                }
-            }
-            
+
             navigationUp: newsListView
             navigationDown: techListView
         }
         
-        BigScreen.TileView {
+        Views.VideoTileView {
             id: techListView
             focus: false
             title: "Technology"
-            cellWidth: parent.width / 4
-            delegate: Delegates.ListVideoCard{}
-            onActiveFocusChanged: {
-                if(activeFocus){
-                    contentLayout.currentSection = techListView
-                }
-            }
-            
+
             navigationUp: musicListView
             navigationDown: polListView
         }
         
-        BigScreen.TileView {
+        Views.VideoTileView {
             id: polListView
             focus: false
             title: "Politics"
-            cellWidth: parent.width / 4
-            delegate: Delegates.ListVideoCard{}
-            onActiveFocusChanged: {
-                if(activeFocus){
-                    contentLayout.currentSection = polListView
-                }
-            }
-            
+
             navigationUp: techListView
             navigationDown: gamingListView
         }
         
-        BigScreen.TileView {
+        Views.VideoTileView {
             id: gamingListView
             focus: false
             title: "Gaming"
-            cellWidth: parent.width / 4
-            delegate: Delegates.ListVideoCard{}
-            onActiveFocusChanged: {
-                if(activeFocus){
-                    contentLayout.currentSection = gamingListView
-                }
-            }
-            
+
             navigationUp: polListView
             navigationDown: trendListView
         }
